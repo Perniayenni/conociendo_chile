@@ -1,0 +1,1 @@
+"use strict";!function(){function n(){return document.querySelector(i).checkValidity()}function t(n){$(".step.active").removeClass("active"),n.addClass("active"),n.find(".input").focus()}$(".step:nth-child(1)").addClass("active");var i="#contact-form";$(i).find(".input").on("change",function(i){var a=$(i.target),e=a.parent().next();t(e),console.log(n)})}();

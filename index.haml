@@ -1,0 +1,102 @@
+-galery_images = ["club-sandwich.jpg","papas.jpg","hamburger.jpg","panini.jpg"]
+!!!5
+%html{class:"no-js", lang:"es"}
+    %head
+        %meta{charset:"utf8"}
+        %title Ciudades Impresionantes
+        %meta{name:"description", content:"Las Ciudades Mas Sorprendentes del mundo entenero."}
+        %link{href:"https://fonts.googleapis.com/css?family=Cormorant+Garamond",rel:"stylesheet"}
+        %link{rel:"stylesheet",href:"css/normalize.css" }
+        %link{rel:"stylesheet",href:"css/bootstrap.min.css" }
+        %link{rel:"stylesheet",href:"flexboxgrid-6.3.1/css/flexboxgrid.css"}
+        %link{rel:"stylesheet",href:"css/style.css" }
+        %meta{name:"viewport",content:"width=device-width, initial-scale=1"}
+        %meta{:"data-name" => "image-counter",content:"#{galery_images.size - 1}"}
+        %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+    %body
+        ="<!--[if lt IE 9]>"
+        %p{class:"browserupgrade"}
+        Estás usando un navegador
+        %strong desactualizado.
+        Por Favor
+        %a{href:"http://browsehappy.com"}
+            actualiza tu navegador
+            para una mejor experiencia
+        ="<![endif]-->"
+        .video-container
+            %video{autoplay:true,loop:true}
+                %source{src:"videos/mp4/freeparking.mp4",typ:"video/mp4"}
+                %source{src:"videos/webm/freeparking.webm", typ:"video/webm"}
+        .row.full-height.middle-xs.center-xs.relative.up#home   
+            .col-xs-12
+                .box.white-text
+                    %img{src:"img/bandera1.jpg", width:200}
+                    %h1.Cormorant_Garamond.title Conoce Chile
+                    %p
+                        %i.glyphicon.glyphicon-eye-open
+                            tiempo
+            %nav.fixed.top.right.navigation.white-text#navigation
+                -menu = ["Inicio","Menu","Galeria","Contacto"]
+                %ul.list-inline
+                    -menu.each do |item|
+                        %li
+                            %a{}= item
+            .left.absolute.black.large-padding.white-text.full-width#descripcion
+                .row.middle-xs.center-xs
+                    .col-xs-7.col-sm-6.medium
+                        El país del Futbol el Asado y el Vino
+                    .col-xs#sticky-navigation
+                        .box
+                            %nav.text-right.navigation
+                                %ul.list-inline
+                                    -menu.each do |item|
+                                        %li
+                                            %a{}= item
+        .text-center.relative#menu
+            .absolute#menu-title
+                %h2.title Menú
+            -menu_photos =[{name:"Imagen1", image:"club-sandwich", pricing:"90909"},{name:"Imagen2", image:"combo", pricing:"90909"},{name:"Imagen3", image:"hamburger", pricing:"90909"},{name:"Imagen4", image:"hot-cakes", pricing:"90909"},{name:"Imagen5", image:"panini", pricing:"90909"},{name:"Imagen6", image:"papas", pricing:"90909"},{name:"Imagen7", image:"hamburger", pricing:"90909"},{name:"Imagen8", image:"hamburger", pricing:"90909"}]
+            .row
+                -menu_photos.each do |photo|
+                    .col-md-4.col-lg-3.cols-sm-6.col-xs-12.food{style:"background-image:url(img/food/#{photo[:image]}-thumb.jpg)"}
+                        //%img{src:"img/food/#{photo[:image]}-thumb.jpg"}
+                        .screen
+                            .row.middle-xs.full-height
+                                .col-xs-12
+                                    %h3.white-text=photo[:name]
+        #galery
+            .inner
+                -galery_images.each do |image|
+                    .image{style:"background-image:url(img/food/#{image})"}
+        .container
+            .card.white.black-text.text-center.relative
+                %h3.medium
+                    En
+                    %strong.dancing-script Restsursngy hhhhghg
+                %p.top-space Chile es un país de América ubicado en el extremo sudoeste de América del Sur. Su nombre oficial es República de Chile y su capital es la ciudad de Santiago. Chile se describe constituido por tres zonas geográficas.
+                Antes del descubrimiento de América, las tierras situadas al sur del desierto de Atacama ya se llamaban Chili en la tradición indígena. Una vez instalados en Nueva Castilla y Nueva Toledo, los conquistadores españoles siguieron llamando de esa forma a la región del sur, a veces también conocida como «valle de Chile», nombre que se extendió posteriormente a todo el actual país.
+
+        .black.white-text.full-height#contac
+            .row.middle-xs.full-height
+                .col-xs-12
+                    .box
+                        %form{action:"https://formspree.io/perniayennifer@gmail.com",method:"POST",id:"contact-form",class:"step-form"}
+                            .row.center-xs
+                                .col-xs-2.col-md-1
+                                    .box
+                                .col-xs-5
+                                    .box
+                                        %fieldset.step.active
+                                            %input{type:"email",name:"email",placeholder:"Correo Electronico",class:"input"}
+                                        %fieldset.step
+                                            %input{type:"text",name:"name",placeholder:"Nombre",class:"input"}
+                                        %fieldset.step
+                                            %textarea{name:"body",placeholder:"Escribe un mensaje"}
+                                        %button{type:"submit",class:"btn btn-success"} Enviar
+
+        %script{src:"http://code.jquery.com/jquery-3.1.1.js", integrity:"sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=",crossorigin:"anonymous"}
+        %script
+            window.jquery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
+        %script{src:"js/form_object.js"}
+        %script{src:"js/main.js"}
+        %script{src:"dist/steps.js"}
