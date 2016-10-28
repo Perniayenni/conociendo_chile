@@ -54,19 +54,6 @@
 		$("#sticky-navigation").slideUp("fast");
 	}
 
-	function sendForm($form) {
-		console.log($form.formObject());
-		$.ajax({
-			url: $form.attr("action"),
-			method: "POST",
-			data: $form.formObject(),
-			dataType: "json",
-			success: function success() {
-				alert("todo salio bien");
-			}
-		});
-	}
-
 	function isInBottom() {
 		var $descripcion = $("#descripcion");
 		var descripcionHeight = $descripcion.height();

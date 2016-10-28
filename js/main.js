@@ -52,19 +52,6 @@
 		$("#sticky-navigation").slideUp("fast")
 	}
 
-	function sendForm($form){
-		console.log($form.formObject())
-		$.ajax({
-		    url: $form.attr("action"),
-		    method: "POST",
-		    data: $form.formObject(),
-		    dataType: "json",
-		    success: function(){
-		    	alert("todo salio bien")
-		    }
-		})
-	}
-
 	function isInBottom(){
 		const $descripcion = $("#descripcion")
 		const descripcionHeight = $descripcion.height()

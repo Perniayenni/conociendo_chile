@@ -2,7 +2,7 @@
 <html class='no-js' lang='es'>
   <head>
     <meta charset='utf8'>
-    <title>Ciudades Impresionantes</title>
+    <title>Conociendo chile</title>
     <meta content='Las Ciudades Mas Sorprendentes del mundo entenero.' name='description'>
     <link href='https://fonts.googleapis.com/css?family=Cormorant+Garamond' rel='stylesheet'>
     <link href='css/normalize.css' rel='stylesheet'>
@@ -195,23 +195,27 @@
       <div class='row middle-xs full-height'>
         <div class='col-xs-12'>
           <div class='box'>
+            <p class='text-center medium' id='info-contacto'>Presiona enter para llenar el campo correspondiente y envíanos un correo</p>
             <form action='https://formspree.io/perniayennifer@gmail.com' class='step-form' id='contact-form' method='POST'>
               <div class='row center-xs'>
                 <div class='col-xs-2 col-md-1'>
-                  <div class='box'></div>
+                  <div class='box text-right'>
+                    <div class='path-step active'></div>
+                    <div class='path-step'></div>
+                    <div class='path-step'></div>
+                  </div>
                 </div>
                 <div class='col-xs-5'>
                   <div class='box'>
                     <fieldset class='step active'>
-                      <input class='input' name='email' placeholder='Correo Electronico' type='email'>
+                      <input class='input' name='email' placeholder='Correo Electronico' required type='email'>
                     </fieldset>
                     <fieldset class='step'>
-                      <input class='input' name='name' placeholder='Nombre' type='text'>
+                      <input class='input' name='name' placeholder='Nombre' required type='text'>
                     </fieldset>
                     <fieldset class='step'>
-                      <textarea name='body' placeholder='Escribe un mensaje'></textarea>
+                      <textarea name='body' placeholder='Escribe un mensaje' required></textarea>
                     </fieldset>
-                    <button class='btn btn-success' type='submit'>Enviar</button>
                   </div>
                 </div>
               </div>
@@ -224,6 +228,7 @@
     <script>
       window.jquery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
     </script>
+    <script src='https://maps.googleapis.com/maps/api/js?key='></script>
     <script src='js/form_object.js'></script>
     <script src='js/main.js'></script>
     <script src='dist/steps.js'></script>

@@ -3,7 +3,7 @@
 %html{class:"no-js", lang:"es"}
     %head
         %meta{charset:"utf8"}
-        %title Ciudades Impresionantes
+        %title Conociendo chile
         %meta{name:"description", content:"Las Ciudades Mas Sorprendentes del mundo entenero."}
         %link{href:"https://fonts.googleapis.com/css?family=Cormorant+Garamond",rel:"stylesheet"}
         %link{rel:"stylesheet",href:"css/normalize.css" }
@@ -80,23 +80,29 @@
             .row.middle-xs.full-height
                 .col-xs-12
                     .box
+                        %p.text-center.medium#info-contacto Presiona enter para llenar el campo correspondiente y envíanos un correo
                         %form{action:"https://formspree.io/perniayennifer@gmail.com",method:"POST",id:"contact-form",class:"step-form"}
                             .row.center-xs
                                 .col-xs-2.col-md-1
-                                    .box
+                                    .box.text-right
+                                        -3.times do |i|
+                                            -if i == 0
+                                                .path-step.active
+                                            -else
+                                                .path-step
                                 .col-xs-5
                                     .box
                                         %fieldset.step.active
-                                            %input{type:"email",name:"email",placeholder:"Correo Electronico",class:"input"}
+                                            %input{type:"email",name:"email",placeholder:"Correo Electronico",class:"input",required:true}
                                         %fieldset.step
-                                            %input{type:"text",name:"name",placeholder:"Nombre",class:"input"}
+                                            %input{type:"text",name:"name",placeholder:"Nombre",class:"input",required:true}  
                                         %fieldset.step
-                                            %textarea{name:"body",placeholder:"Escribe un mensaje"}
-                                        %button{type:"submit",class:"btn btn-success"} Enviar
+                                            %textarea{name:"body",placeholder:"Escribe un mensaje",required:true}
 
         %script{src:"http://code.jquery.com/jquery-3.1.1.js", integrity:"sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=",crossorigin:"anonymous"}
         %script
             window.jquery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
+        %script{src:"https://maps.googleapis.com/maps/api/js?key="}
         %script{src:"js/form_object.js"}
         %script{src:"js/main.js"}
         %script{src:"dist/steps.js"}
