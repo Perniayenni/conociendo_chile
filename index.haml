@@ -1,4 +1,4 @@
--galery_images = ["club-sandwich.jpg","papas.jpg","hamburger.jpg","panini.jpg"]
+-galery_images = ["isla-de-pascua.jpg","imagen1.jpg","plaza_de_armas.jpg"]
 !!!5
 %html{class:"no-js", lang:"es"}
     %head
@@ -47,7 +47,7 @@
                         El país del Futbol el Asado y el Vino
                     .col-xs#sticky-navigation
                         .box
-                            %nav.text-right.navigation
+                            %nav.text-right.navigation#responsive-nav
                                 %ul.list-inline
                                     -menu.each do |item|
                                         %li
@@ -67,7 +67,7 @@
         #galery
             .inner
                 -galery_images.each do |image|
-                    .image{style:"background-image:url(img/food/#{image})"}
+                    .image{style:"background-image:url(img/cc/#{image})"}
         .container
             .card.white.black-text.text-center.relative
                 %h3.medium
@@ -98,11 +98,15 @@
                                             %input{type:"text",name:"name",placeholder:"Nombre",class:"input",required:true}  
                                         %fieldset.step
                                             %textarea{name:"body",placeholder:"Escribe un mensaje",required:true}
+        #location
+            #mapa
+            #message.black.large-padding.white-text.text-center.medium
 
         %script{src:"http://code.jquery.com/jquery-3.1.1.js", integrity:"sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=",crossorigin:"anonymous"}
         %script
             window.jquery || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
-        %script{src:"https://maps.googleapis.com/maps/api/js?key="}
-        %script{src:"js/form_object.js"}
-        %script{src:"js/main.js"}
+        %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyD9wOSRujHmmfr3esyEGuhMl_DMPD1wb2k"}
+        %script{src:"dist/maps.js"}
+        %script{src:"dist/form_object.js"}
+        %script{src:"dist/main.js"}
         %script{src:"dist/steps.js"}

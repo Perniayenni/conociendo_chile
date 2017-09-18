@@ -238,6 +238,16 @@ textarea {
   width: 100%;
 }
 
+#location {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -50px;
+}
+
+#mapa {
+  height: 500px;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -397,6 +407,22 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen and (max-width: 960px) {
+  #responsive-nav ul {
+    position: absolute;
+    width: 100%;
+    font-size: 1.5em;
+    top: 95px;
+    left: 0px;
+  }
+  #responsive-nav ul li {
+    display: block;
+    margin-top: 1em;
+    padding: 10px 15px;
+    text-align: center;
+  }
+}
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:

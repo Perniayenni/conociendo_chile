@@ -244,6 +244,15 @@ textarea {
         }
     }
 }
+#location{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -50px;
+}
+
+#mapa{
+    height: 500px;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -400,6 +409,24 @@ textarea {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and(max-width:960px){
+    #responsive-nav{
+        ul{
+            position: absolute;
+            width: 100%;
+            font-size: 1.5em;
+            top: 95px;
+            left: 0px;
+            li{
+                display: block;
+                margin-top: 1em;
+                padding:10px 15px;
+                text-align: center;
+            }
+        }
+    }
 }
 
 @media print,
